@@ -1,30 +1,31 @@
-<script setup lang="ts">
-import HelloWorld from './lib/components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="flex h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <div class="w-64 bg-white shadow-md">
+      <div class="p-4">
+        <h1 class="text-2xl font-bold">Meja UI</h1>
+      </div>
+      <nav class="mt-4">
+        <router-link to="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Home</router-link>
+        <router-link to="/button" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Button</router-link>
+        <router-link to="/card" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Card</router-link>
+        <router-link to="/datatable" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">DataTable</router-link>
+      </nav>
+    </div>
+
+    <!-- Content -->
+    <div class="flex-1 p-8 overflow-y-auto">
+      <router-view />
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+<script setup lang="ts">
+</script>
+
+<style>
+/* It's better to move these styles to a global css file, but for simplicity I'll leave them here for now */
+body {
+  margin: 0;
 }
 </style>
